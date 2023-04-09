@@ -4,10 +4,6 @@ const port = 3000
 const exphbs = require('express-handlebars')
 const generateShortCode = require('./shortcode_generate')
 
-const mongoose = require('mognoose')
-
-
-
 app.engine('handlebars',exphbs({defaultLayout:'main'}))
 app.set('view engine','handlebars')
 app.use(express.urlencoded({ extended: true })) //需載入body-parser才能抓取req.body的表單資料
