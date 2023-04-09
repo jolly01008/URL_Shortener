@@ -1,12 +1,20 @@
-
+{{#if Url}}
   <div class="container">
-    <form action="">
+    <div class="text-center mt-5">
+      <h3>Success! Please use this link :</h3>
+    </div>
+  </div>
+
+{{else}}
+  <div class="container">
+    <form action="/" method="POST">
       <div class="mt-5 col-6 mx-auto">
-        <input type="text" class="form-control" placeholder="Input URL here">
+        <input name="shortURL" type="text" class="form-control" placeholder="Input URL here">
       </div>
 
       <div class="d-grid col-2 mx-auto mt-4">
-        <button class="btn btn-primary" type="button">Shorten</button>
+        <button class="btn btn-primary" type="submit">Shorten</button>
       </div>
     </form>
   </div>
+{{/if}}
