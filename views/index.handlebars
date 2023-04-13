@@ -1,7 +1,9 @@
-{{#if Url}}
+{{#if shortCode}}
   <div class="container">
     <div class="text-center mt-5">
       <h3>Success! Please use this link :</h3>
+      <p> {{origin}}/{{shortCode}} </p>
+      <p> {{data}} </p>
     </div>
     {{!-- <button class="btn btn-primary">copy</button> --}}
   </div>
@@ -10,7 +12,7 @@
   <div class="container">
     <form action="/" method="POST">
       <div class="mt-5 col-6 mx-auto">
-        <input name="shortURL" type="text" class="form-control" placeholder="Input URL here">
+        <input name="userURL" type="url" class="form-control" placeholder="Input URL here">
       </div>
 
       <div class="d-grid col-2 mx-auto mt-4">
