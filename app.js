@@ -39,6 +39,23 @@ app.post('/', (req,res) => {
     .catch(error => console.log(error))
 })
 
+//用得到的新URL，去導向 originalURL
+app.get('/:shortCode' , (req,res) =>{
+  const shortCode = req.params.shortCode 
+  URL.findOne({ shortURL: shortCode })   //findOne找資料庫內符合"shrotCode"條件的data
+     .then((data) =>{
+      if(!data){
+        res.render('error',{
+          errorMsg: '找不到相符的URL',
+          checkMsg: '請再確認一下輸入的網址'
+        })
+        return }
+        
+      res.redirect(data.originalURL)   //導向該筆data的originalURL
+     })
+})
+
+
 app.listen( port , () =>{
   console.log(`Express is running on http://localhost:${port}`)
 })
