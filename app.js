@@ -16,11 +16,8 @@ app.get('/', (req,res) => {
 })
 
 app.post('/', (req,res) => {
-  const ori_url = req.body.userURL
-  console.log('req.body.originalUrl:' , ori_url)
+  const ori_url = req.body.userURL  //使用者打的內容存到ori_url
   const randomCode = generateShortCode()
-  console.log(randomCode)
-
 
   if(!ori_url){ return res.redirect('/') } //如果使用者沒打內容，重新導向首頁
   

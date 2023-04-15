@@ -1,12 +1,22 @@
 {{#if shortCode}}
-  <div class="container">
-    <div class="text-center mt-5">
-      <h3>Success! Please use this link :</h3>
-      <p> {{origin}}/{{shortCode}} </p>
-      <p> {{data}} </p>
+  <div class="container text-center d-flex flex-column ">
+    <h2 class="mt-5">Success! Please use this link :</h2>
+    <div class="d-flex justify-content-center mt-3">
+      <h4 class="text-bg-success p-3 rounded col-6" id="newURL"> {{origin}}/{{shortCode}} </h4>
     </div>
-    {{!-- <button class="btn btn-primary">copy</button> --}}
+    <div class="d-flex justify-content-center mt-5">
+      <button class="btn btn-outline-success p-3" onclick="copyURL()">copy this link</button>
+    </div>
   </div>
+
+  <script>
+    function copyURL() {
+      const newURL = document.getElementById("newURL")
+      navigator.clipboard.writeText(newURL.innerText)
+        .then(() => alert('已複製此連結'))
+        .catch(error => console.log(error))
+    }
+  </script>
 
 {{else}}
   <div class="container">
