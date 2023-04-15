@@ -1,6 +1,6 @@
 # URL Shortener 短網址產生器
 
-![Index page about Restaurant List](https://github.com/jolly01008/URL_Shortener/blob/main/短網址產生器.png)
+![image about URL Shortener](https://github.com/jolly01008/URL_Shortener/blob/main/短網址產生器.png)
 
 ## 介紹
 
@@ -42,6 +42,7 @@ npm i mongoose@5.9.7
 ```
 npm install -g nodemon
 ```
+
 7. 啟動伺服器，執行 app.js 檔案
 
 ```
