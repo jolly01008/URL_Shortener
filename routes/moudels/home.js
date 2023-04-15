@@ -16,6 +16,7 @@ router.post('/', (req,res) => {
   if(!ori_url){ return res.redirect('/') } //如果使用者沒打內容，重新導向首頁
   
   //用findOne找是否有符合條件的data
+  //輸入相同網址時，產生一樣的縮址
   //沒符合的data，就create data
   URL.findOne({ originalURL: ori_url })
     .then(data => data ? data : URL.create({ shortURL: randomCode , originalURL: ori_url})
